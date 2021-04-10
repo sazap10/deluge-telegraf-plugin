@@ -8,3 +8,4 @@ deluge-telegraf-plugin
 *.out
 .vscode
 plugin-test.conf
+telegraf.conf

@@ -10,40 +10,49 @@ import (
 	"github.com/pkg/errors"
 )
 
-type DelugeAPI struct {
+// API defines the structure for the API
+type API struct {
 	Host      string
 	Password  string
 	AuthToken *string
 }
 
+// BaseResponse defines the base response from the API
 type BaseResponse struct {
 	Error *Error `json:"error"`
 	ID    int    `json:"id"`
 }
 
+// Error defines the structure for the error returned from API
 type Error struct {
 	Code    int    `json:"code"`
 	Message string `json:"message"`
 }
 
+// AuthResponse defines the structure for auth.login response
 type AuthResponse struct {
 	Result bool `json:"result"`
 	BaseResponse
 }
 
+// UpdateUIResponse defines the structure for web.update_ui response
 type UpdateUIResponse struct {
 	Result *UpdateUIResult `json:"result"`
 	BaseResponse
 }
 
+// UpdateUIResult defines the structure for web.update_ui result in the response
 type UpdateUIResult struct {
 	Connected bool     `json:"connected"`
 	Torrents  Torrents `json:"torrents"`
 	Filters   Filters  `json:"filters"`
 	Stats     Stats    `json:"stats"`
 }
+
+// Torrents defines the structure for torrents info map in the result
 type Torrents map[string]TorrentInfo
 
+// TorrentInfo defines the structure for torrent info in the result
 type TorrentInfo struct {
 	TimeAdded     int     `json:"time_added"`
 	Name          string  `json:"name"`
@@ -56,6 +65,7 @@ type TorrentInfo struct {
 	TrackerHost   string  `json:"tracker_host"`
 }
 
+// Filters defines the structure for filters in the result
 type Filters struct {
 	State       []FilterInfo `json:"state"`
 	TrackerHost []FilterInfo `json:"tracker_host"`
@@ -63,11 +73,13 @@ type Filters struct {
 	Label       []FilterInfo `json:"label"`
 }
 
+// FilterInfo defines the structure for a filter info in the result
 type FilterInfo struct {
 	Key    string
 	Number int
 }
 
+// Stats defines the structure for the overall stats in the result
 type Stats struct {
 	MaxDownload            float64 `json:"max_download"`
 	MaxUpload              float64 `json:"max_upload"`
@@ -83,32 +95,39 @@ type Stats struct {
 	ExternalIP             string  `json:"external_ip"`
 }
 
+// BaseRequest defines the structure for the base request to the API
 type BaseRequest struct {
 	Method string `json:"method"`
 	ID     int    `json:"id"`
 }
 
+// UpdateUIRequest defines the structure for the web.update_ui request to the API
 type UpdateUIRequest struct {
 	Params UpdateUIRequestParams `json:"params"`
 	BaseRequest
 }
 
+// UpdateUIRequestParams defines the structure for the web.update_ui request params
 type UpdateUIRequestParams struct {
 	Keys    []string
 	Filters *map[string]string
 }
 
+// AuthRequest defines the structure for the auth.login request to the API
 type AuthRequest struct {
 	Params []string `json:"params"`
 	BaseRequest
 }
 
+// NoAuthError defines the structure for the Unauthenticated error
 type NoAuthError struct{}
 
+// Error returns the Unauthenticated error
 func (e *NoAuthError) Error() string {
 	return "authentication failed, please check that you are authenticated"
 }
 
+// UnmarshalJSON unmarshalls a FilterInfo object
 func (f *FilterInfo) UnmarshalJSON(p []byte) error {
 	var tmp []json.RawMessage
 
@@ -127,11 +146,12 @@ func (f *FilterInfo) UnmarshalJSON(p []byte) error {
 	return nil
 }
 
+// MarshalJSON marshalls a UpdateUIRequestParams object to json
 func (p *UpdateUIRequestParams) MarshalJSON() ([]byte, error) {
 	return json.Marshal([]interface{}{p.Keys, p.Filters})
 }
 
-func (d *DelugeAPI) makeRequest(host string, request interface{}) (*http.Response, error) {
+func (d *API) makeRequest(host string, request interface{}) (*http.Response, error) {
 	httpClient := &http.Client{}
 	u, _ := url.Parse(fmt.Sprintf("%s/json", host))
 
@@ -173,7 +193,8 @@ func (d *DelugeAPI) makeRequest(host string, request interface{}) (*http.Respons
 	return resp, nil
 }
 
-func (d *DelugeAPI) GetAuth() error {
+// GetAuth makes auth.login request to Deluge and sets auth to API
+func (d *API) GetAuth() error {
 	authRequest := &AuthRequest{
 		Params: []string{d.Password},
 		BaseRequest: BaseRequest{
@@ -204,7 +225,8 @@ func (d *DelugeAPI) GetAuth() error {
 	return errors.New("unable to retrieve auth token")
 }
 
-func (d *DelugeAPI) GetMetrics() (*UpdateUIResult, error) {
+// GetMetrics makes web.update_ui request to Deluge and returns the result
+func (d *API) GetMetrics() (*UpdateUIResult, error) {
 	updateUIRequest := &UpdateUIRequest{
 		Params: UpdateUIRequestParams{
 			Keys: []string{

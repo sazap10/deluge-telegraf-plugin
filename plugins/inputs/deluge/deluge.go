@@ -6,17 +6,20 @@ import (
 	"github.com/pkg/errors"
 )
 
+// Deluge defines the data structure for plugin
 type Deluge struct {
 	Host     string `toml:"host"`
 	Password string `toml:"password"`
 	Log      telegraf.Logger
-	API      *DelugeAPI
+	API      *API
 }
 
+// Description returns the plugin description
 func (d *Deluge) Description() string {
 	return "A plugin to gather data from Deluge."
 }
 
+// SampleConfig returns the sample config for the plugin
 func (d *Deluge) SampleConfig() string {
 	return `
 ## Indicate if everything is fine
@@ -30,18 +33,19 @@ func (d *Deluge) SampleConfig() string {
 
 // Init is for setup, and validating config.
 func (d *Deluge) Init() error {
-	DelugeAPI := &DelugeAPI{
+	API := &API{
 		Host:     d.Host,
 		Password: d.Password,
 	}
-	err := DelugeAPI.GetAuth()
+	err := API.GetAuth()
 	if err != nil {
 		return err
 	}
-	d.API = DelugeAPI
+	d.API = API
 	return nil
 }
 
+// Gather gathers and sends metrics to output
 func (d *Deluge) Gather(acc telegraf.Accumulator) error {
 	result, err := d.API.GetMetrics()
 	if err != nil {

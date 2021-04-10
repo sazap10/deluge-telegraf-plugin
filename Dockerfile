@@ -19,7 +19,7 @@ RUN go mod download
 COPY . /build/
 
 # Build the executable
-RUN go build -o deluge-telegraf-plugin
+RUN go build -o deluge-telegraf-plugin cmd/main.go
 
 ################################################################################
 # LINT IMAGE
