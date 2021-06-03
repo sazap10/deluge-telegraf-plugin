@@ -1,0 +1,52 @@
+linters-settings:
+  govet:
+    check-shadowing: true
+  maligned:
+    suggest-new: true
+  gocyclo:
+    min-complexity: 15
+  dupl:
+    threshold: 300
+  lll:
+    line-length: 200
+  golint:
+    min-confidence: 0
+
+issues:
+  include:
+    - EXC0002 # disable excluding of issues about comments from golint
+  exclude:
+    # errcheck: Almost all programs ignore errors on these functions and in most cases it's ok
+    - Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*printf?|os\.(Un)?Setenv). is not checked
+    # golint: Only require comments on methods
+    - exported (const|var) .* should have comment.*
+    - comment on exported (const|var) .* should be of the form
+    - should have a package comment, unless it's in another file for this package
+
+linters:
+  enable-all: false
+  enable:
+    - deadcode
+    - dupl
+    - gocyclo
+    - goconst
+    - gofmt
+    - goimports
+    - golint
+    - gosimple
+    - govet
+    - ineffassign
+    - interfacer
+    - lll
+    - maligned
+    - misspell
+    - nakedret
+    - structcheck
+    - staticcheck
+    - typecheck
+    - unconvert
+    - varcheck
+
+run:
+  concurrency: 4
+  deadline: 5m
