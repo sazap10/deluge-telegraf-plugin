@@ -3,9 +3,10 @@
 *.dll
 *.so
 *.dylib
-deluge-telegraf-plugin
+bin
 *.test
 *.out
 .vscode
 plugin-test.conf
 telegraf.conf
+dist/

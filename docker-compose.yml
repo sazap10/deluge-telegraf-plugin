@@ -14,7 +14,19 @@ services:
     build: .
     volumes: 
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
-      - ./plugin-test.conf:/app/plugin.conf:ro
+      - ./plugin.conf:/app/plugin.conf:ro
+  deluge:
+    image: ghcr.io/linuxserver/deluge
+    ports:
+      - 8112:8112
+      - 58846
+      - 58946
+      - 58946/udp
+    volumes:
+      - deluge-config:/config
+      - deluge-downloads:/downloads
 volumes: 
   influxdb:
   grafana:
+  deluge-config:
+  deluge-downloads:
