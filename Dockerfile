@@ -40,6 +40,6 @@ COPY .golangci.yaml .
 # FINAL IMAGE
 ################################################################################
 
-FROM telegraf:1.18-alpine
+FROM telegraf:1.19-alpine
 
 COPY --from=builder /build/deluge-telegraf-plugin /app/
