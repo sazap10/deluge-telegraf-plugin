@@ -1,18 +1,18 @@
 version: "3.7"
-services: 
+services:
   influxdb:
     image: influxdb:1.8-alpine
-    volumes: 
+    volumes:
       - influxdb:/var/lib/influxdb
   grafana:
-    image: grafana/grafana:8.3.2
-    volumes: 
+    image: grafana/grafana
+    volumes:
       - grafana:/var/lib/grafana
     ports:
       - 3000:3000
   telegraf:
     build: .
-    volumes: 
+    volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
       - ./plugin.conf:/app/plugin.conf:ro
   deluge:
@@ -25,7 +25,7 @@ services:
     volumes:
       - deluge-config:/config
       - deluge-downloads:/downloads
-volumes: 
+volumes:
   influxdb:
   grafana:
   deluge-config:
