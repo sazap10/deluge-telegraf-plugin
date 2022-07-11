@@ -806,6 +806,7 @@ github.com/docker/docker v20.10.7+incompatible/go.mod h1:eEKB0N0r5NX/I1kEveEz05b
 github.com/docker/docker v20.10.9+incompatible/go.mod h1:eEKB0N0r5NX/I1kEveEz05bcu8tLC/8azJZsviup8Sk=
 github.com/docker/docker v20.10.11+incompatible/go.mod h1:eEKB0N0r5NX/I1kEveEz05bcu8tLC/8azJZsviup8Sk=
 github.com/docker/docker v20.10.14+incompatible/go.mod h1:eEKB0N0r5NX/I1kEveEz05bcu8tLC/8azJZsviup8Sk=
+github.com/docker/docker v20.10.17+incompatible/go.mod h1:eEKB0N0r5NX/I1kEveEz05bcu8tLC/8azJZsviup8Sk=
 github.com/docker/go-connections v0.3.0 h1:3lOnM9cSzgGwx8VfK/NGOW5fLQ0GjIlCkaktF+n1M6o=
 github.com/docker/go-connections v0.3.0/go.mod h1:Gbd7IOopHjR8Iph03tsViu4nIes5XhDvyHbTtUxmeec=
 github.com/docker/go-connections v0.4.0/go.mod h1:Gbd7IOopHjR8Iph03tsViu4nIes5XhDvyHbTtUxmeec=
@@ -1517,6 +1518,8 @@ github.com/influxdata/telegraf v1.23.0 h1:DVpHQaxFcYGHlkatqLCbvq/7ewgyC9LZBHhS50
 github.com/influxdata/telegraf v1.23.0/go.mod h1:JTtQwbm95AcrVFBGgyynLUwauEuZSLVDLBMHyWgP++k=
 github.com/influxdata/telegraf v1.23.1 h1:GxQa68c1Nc5ogX79jioBNMjVvZvjxcGwQq4QTtcWclI=
 github.com/influxdata/telegraf v1.23.1/go.mod h1:zehVMeHE2PEVct6pYe6zgsWtJNAO2JkBw5gqfS79r6s=
+github.com/influxdata/telegraf v1.23.2 h1:dzdw2l7uP/1H2n8+PqlCdl+u/PobGGAhcK4DTRxe1Hg=
+github.com/influxdata/telegraf v1.23.2/go.mod h1:iwLr7fuCdHganjxehJWJ7AdmTd1q5V9L4Pi3FFkFqX4=
 github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 h1:vvyMtD5LTJc1W9sQKjDkAWdcg0478CszSdzlHtiAXCY=
 github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65/go.mod h1:zApaNFpP/bTpQItGZNNUMISDMDAnTXu9UqJ4yT3ocz8=
 github.com/influxdata/usage-client v0.0.0-20160829180054-6d3895376368/go.mod h1:Wbbw6tYNvwa5dlB6304Sd+82Z3f7PmVZHVKU637d4po=
