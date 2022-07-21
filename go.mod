@@ -1,6 +1,6 @@
 module github.com/sazap10/deluge-telegraf-plugin
 
-go 1.16
+go 1.18
 
 require (
 	github.com/influxdata/telegraf v1.23.2
