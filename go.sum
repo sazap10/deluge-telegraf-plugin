@@ -311,6 +311,7 @@ github.com/antchfx/jsonquery v1.1.4 h1:+OlFO3QS9wjU0MKx9MgHm5f6o6hdd4e9mUTp0wTjx
 github.com/antchfx/jsonquery v1.1.4/go.mod h1:cHs8r6Bymd8j6HI6Ej1IJbjahKvLBcIEh54dfmo+E9A=
 github.com/antchfx/jsonquery v1.1.5 h1:1YWrNFYCcIuJPIjFeOP5b6TXbLSUYY8qqxWbuZOB1qE=
 github.com/antchfx/jsonquery v1.1.5/go.mod h1:RtMzTHohKaAerkfslTNjr3Y9MdxjKlSgIgaVjVKNiug=
+github.com/antchfx/jsonquery v1.2.0/go.mod h1:fZ88NWso7HlXESJ2hrNKnYx+xyT6pmvV1N6KMIg7FHo=
 github.com/antchfx/xmlquery v1.3.3 h1:HYmadPG0uz8CySdL68rB4DCLKXz2PurCjS3mnkVF4CQ=
 github.com/antchfx/xmlquery v1.3.3/go.mod h1:64w0Xesg2sTaawIdNqMB+7qaW/bSqkQm+ssPaCMWNnc=
 github.com/antchfx/xmlquery v1.3.5 h1:I7TuBRqsnfFuL11ruavGm911Awx9IqSdiU6W/ztSmVw=
@@ -1520,6 +1521,8 @@ github.com/influxdata/telegraf v1.23.1 h1:GxQa68c1Nc5ogX79jioBNMjVvZvjxcGwQq4QTt
 github.com/influxdata/telegraf v1.23.1/go.mod h1:zehVMeHE2PEVct6pYe6zgsWtJNAO2JkBw5gqfS79r6s=
 github.com/influxdata/telegraf v1.23.2 h1:dzdw2l7uP/1H2n8+PqlCdl+u/PobGGAhcK4DTRxe1Hg=
 github.com/influxdata/telegraf v1.23.2/go.mod h1:iwLr7fuCdHganjxehJWJ7AdmTd1q5V9L4Pi3FFkFqX4=
+github.com/influxdata/telegraf v1.23.3 h1:obFbkBCAWKQbJGcYqFITHtmxxQ8/nE9pqvZQ3Uhsnnw=
+github.com/influxdata/telegraf v1.23.3/go.mod h1:DA7kymhpNGAHGFW8sTW5Lg0jPQ4ff6XOVwiQrjr4ipg=
 github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 h1:vvyMtD5LTJc1W9sQKjDkAWdcg0478CszSdzlHtiAXCY=
 github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65/go.mod h1:zApaNFpP/bTpQItGZNNUMISDMDAnTXu9UqJ4yT3ocz8=
 github.com/influxdata/usage-client v0.0.0-20160829180054-6d3895376368/go.mod h1:Wbbw6tYNvwa5dlB6304Sd+82Z3f7PmVZHVKU637d4po=
