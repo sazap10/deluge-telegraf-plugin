@@ -28,13 +28,16 @@ RUN go build -o deluge-telegraf-plugin cmd/main.go
 FROM golang:1.19.0 as ci
 
 # Install golangci
-RUN curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.39.0
+RUN curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.47.2
 
 WORKDIR /app
 
 COPY --from=builder /build .
 
 COPY .golangci.yaml .
+
+ENTRYPOINT [ "sh", "-c" ]
+CMD [ "golangci-lint run -v && go test ./... -race -timeout 30m -p 1" ]
 
 ################################################################################
 # FINAL IMAGE

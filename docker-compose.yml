@@ -25,6 +25,10 @@ services:
     volumes:
       - deluge-config:/config
       - deluge-downloads:/downloads
+  lint:
+    build:
+      context: .
+      target: lint
 volumes:
   influxdb:
   grafana:

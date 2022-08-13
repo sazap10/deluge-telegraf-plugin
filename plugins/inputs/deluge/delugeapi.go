@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"net/url"
 
@@ -203,6 +204,12 @@ func (d *API) GetAuth() error {
 		},
 	}
 	resp, err := d.makeRequest(d.Host, authRequest)
+	defer func() {
+		bodyErr := resp.Body.Close()
+		if bodyErr != nil {
+			log.Println(bodyErr)
+		}
+	}()
 	if err != nil {
 		return errors.Wrap(err, "unable to authenticate with deluge, please check config")
 	}
@@ -245,6 +252,12 @@ func (d *API) GetMetrics() (*UpdateUIResult, error) {
 		BaseRequest: BaseRequest{Method: "web.update_ui", ID: 1},
 	}
 	resp, err := d.makeRequest(d.Host, updateUIRequest)
+	defer func() {
+		bodyErr := resp.Body.Close()
+		if bodyErr != nil {
+			log.Println(bodyErr)
+		}
+	}()
 	if err != nil {
 		return nil, errors.Wrap(err, "error making web.update_ui request to deluge")
 	}
