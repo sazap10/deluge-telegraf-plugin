@@ -102,6 +102,7 @@ func (d *Deluge) gatherTorrent(acc telegraf.Accumulator, torrent TorrentInfo) {
 	acc.AddFields("deluge_torrent", fields, tags)
 }
 
+//nolint:gochecknoinits
 func init() {
 	inputs.Add("deluge", func() telegraf.Input { return &Deluge{} })
 }

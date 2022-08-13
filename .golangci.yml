@@ -26,26 +26,37 @@ issues:
 linters:
   enable-all: false
   enable:
+    - bodyclose
     - deadcode
+    - depguard
+    - dogsled
     - dupl
-    - gocyclo
+    - errcheck
+    - funlen
+    - gochecknoinits
     - goconst
+    - gocritic
+    - gocyclo
     - gofmt
-    - goimports
-    - golint
+    - revive
+    - goprintffuncname
+    - gosec
     - gosimple
     - govet
     - ineffassign
-    - interfacer
     - lll
-    - maligned
     - misspell
     - nakedret
-    - structcheck
+    - exportloopref
     - staticcheck
+    - stylecheck
     - typecheck
     - unconvert
+    - unparam
+    - unused
     - varcheck
+    - whitespace
+    - gochecknoglobals
 
 run:
   concurrency: 4
