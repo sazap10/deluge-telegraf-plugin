@@ -3,7 +3,7 @@ module github.com/sazap10/deluge-telegraf-plugin
 go 1.19
 
 require (
-	github.com/influxdata/telegraf v1.24.1
+	github.com/influxdata/telegraf v1.24.2
 	github.com/pkg/errors v0.9.1
 )
 
@@ -25,8 +25,8 @@ require (
 	github.com/gosnmp/gosnmp v1.34.0 // indirect
 	github.com/influxdata/line-protocol/v2 v2.2.1 // indirect
 	github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 // indirect
-	github.com/mattn/go-colorable v0.1.12 // indirect
-	github.com/mattn/go-isatty v0.0.14 // indirect
+	github.com/mattn/go-colorable v0.1.13 // indirect
+	github.com/mattn/go-isatty v0.0.16 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.2-0.20181231171920-c182affec369 // indirect
 	github.com/naoina/go-stringutil v0.1.0 // indirect
 	github.com/philhofer/fwd v1.1.1 // indirect
@@ -42,6 +42,6 @@ require (
 	github.com/wavefronthq/wavefront-sdk-go v0.10.4 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.6.0 // indirect
-	golang.org/x/sys v0.0.0-20220804214406-8e32c043e418 // indirect
+	golang.org/x/sys v0.0.0-20220919091848-fb04ddd9f9c8 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 )
