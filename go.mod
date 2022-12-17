@@ -3,7 +3,7 @@ module github.com/sazap10/deluge-telegraf-plugin
 go 1.19
 
 require (
-	github.com/influxdata/telegraf v1.24.4
+	github.com/influxdata/telegraf v1.25.0
 	github.com/pkg/errors v0.9.1
 )
 
@@ -12,6 +12,8 @@ require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
 	github.com/alecthomas/participle v0.4.1 // indirect
 	github.com/alecthomas/units v0.0.0-20211218093645-b94a6e3cc137 // indirect
+	github.com/awnumar/memcall v0.1.2 // indirect
+	github.com/awnumar/memguard v0.22.3 // indirect
 	github.com/benbjohnson/clock v1.3.0 // indirect
 	github.com/blues/jsonata-go v1.5.4 // indirect
 	github.com/caio/go-tdigest v3.1.0+incompatible // indirect
@@ -22,7 +24,7 @@ require (
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
-	github.com/gosnmp/gosnmp v1.34.0 // indirect
+	github.com/gosnmp/gosnmp v1.35.0 // indirect
 	github.com/influxdata/line-protocol/v2 v2.2.1 // indirect
 	github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
@@ -39,9 +41,10 @@ require (
 	github.com/tidwall/pretty v1.2.0 // indirect
 	github.com/tinylib/msgp v1.1.6 // indirect
 	github.com/vjeantet/grok v1.0.1 // indirect
-	github.com/wavefronthq/wavefront-sdk-go v0.10.4 // indirect
+	github.com/wavefronthq/wavefront-sdk-go v0.11.0 // indirect
 	go.uber.org/atomic v1.9.0 // indirect
 	go.uber.org/multierr v1.8.0 // indirect
-	golang.org/x/sys v0.0.0-20220928140112-f11e5e49a4ec // indirect
+	golang.org/x/crypto v0.0.0-20220926161630-eccd6366d1be // indirect
+	golang.org/x/sys v0.3.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 )
