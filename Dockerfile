@@ -43,6 +43,6 @@ CMD [ "golangci-lint run -v && go test ./... -race -timeout 30m -p 1" ]
 # FINAL IMAGE
 ################################################################################
 
-FROM telegraf:1.24-alpine
+FROM telegraf:1.25-alpine
 
 COPY --from=builder /build/deluge-telegraf-plugin /app/
