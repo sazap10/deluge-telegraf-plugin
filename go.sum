@@ -651,6 +651,8 @@ github.com/influxdata/telegraf v1.24.4 h1:XCO8gkKuYvdAsfW86zdSeCnAHcoVQqJQ8rSyOO
 github.com/influxdata/telegraf v1.24.4/go.mod h1:xX7qj51rPlBdC/O8W4W9+y7FUgPVpjEdnPefmlbfDs4=
 github.com/influxdata/telegraf v1.25.0 h1:7qsvzQWUSxoefihlZ8/FXziYkdL2zUkDCoi8IKoPH8I=
 github.com/influxdata/telegraf v1.25.0/go.mod h1:wklOYjUkSTVVr5xXHzmVRU1AdjRmHNZ/UI8ArkwMa2c=
+github.com/influxdata/telegraf v1.25.1 h1:PEu1ezqnOYEeuO55oQ+itofdc9x5rxJq6+T9BoJkocw=
+github.com/influxdata/telegraf v1.25.1/go.mod h1:ymUGykC2O7MO2kyCtOL2sOm5m18rJEVJUOr+LxBlrjE=
 github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 h1:vvyMtD5LTJc1W9sQKjDkAWdcg0478CszSdzlHtiAXCY=
 github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65/go.mod h1:zApaNFpP/bTpQItGZNNUMISDMDAnTXu9UqJ4yT3ocz8=
 github.com/influxdata/usage-client v0.0.0-20160829180054-6d3895376368/go.mod h1:Wbbw6tYNvwa5dlB6304Sd+82Z3f7PmVZHVKU637d4po=
