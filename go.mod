@@ -3,7 +3,7 @@ module github.com/sazap10/deluge-telegraf-plugin
 go 1.20
 
 require (
-	github.com/influxdata/telegraf v1.26.0
+	github.com/influxdata/telegraf v1.26.1
 	github.com/pkg/errors v0.9.1
 )
 
@@ -35,5 +35,5 @@ require (
 	github.com/tinylib/msgp v1.1.6 // indirect
 	golang.org/x/crypto v0.5.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
-	google.golang.org/protobuf v1.28.1 // indirect
+	google.golang.org/protobuf v1.28.2-0.20230222093303-bc1253ad3743 // indirect
 )
