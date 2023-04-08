@@ -1,6 +1,6 @@
 module github.com/sazap10/deluge-telegraf-plugin
 
-go 1.19
+go 1.20
 
 require (
 	github.com/influxdata/telegraf v1.26.0
@@ -8,7 +8,6 @@ require (
 )
 
 require (
-	collectd.org v0.5.0 // indirect
 	github.com/BurntSushi/toml v1.2.1 // indirect
 	github.com/alecthomas/participle v0.4.1 // indirect
 	github.com/alecthomas/units v0.0.0-20211218093645-b94a6e3cc137 // indirect
@@ -16,16 +15,13 @@ require (
 	github.com/awnumar/memguard v0.22.3 // indirect
 	github.com/benbjohnson/clock v1.3.0 // indirect
 	github.com/blues/jsonata-go v1.5.4 // indirect
-	github.com/caio/go-tdigest v3.1.0+incompatible // indirect
 	github.com/coreos/go-semver v0.3.1 // indirect
 	github.com/fatih/color v1.13.0 // indirect
-	github.com/go-logfmt/logfmt v0.6.0 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/gosnmp/gosnmp v1.35.0 // indirect
-	github.com/influxdata/line-protocol/v2 v2.2.1 // indirect
 	github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.16 // indirect
@@ -36,14 +32,7 @@ require (
 	github.com/prometheus/common v0.41.0 // indirect
 	github.com/prometheus/prometheus v1.8.2-0.20210430082741-2a4b8e12bbf2 // indirect
 	github.com/sleepinggenius2/gosmi v0.4.4 // indirect
-	github.com/tidwall/gjson v1.14.3 // indirect
-	github.com/tidwall/match v1.1.1 // indirect
-	github.com/tidwall/pretty v1.2.0 // indirect
 	github.com/tinylib/msgp v1.1.6 // indirect
-	github.com/vjeantet/grok v1.0.1 // indirect
-	github.com/wavefronthq/wavefront-sdk-go v0.11.0 // indirect
-	go.uber.org/atomic v1.10.0 // indirect
-	go.uber.org/multierr v1.9.0 // indirect
 	golang.org/x/crypto v0.5.0 // indirect
 	golang.org/x/sys v0.6.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect

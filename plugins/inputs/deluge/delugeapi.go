@@ -140,11 +140,7 @@ func (f *FilterInfo) UnmarshalJSON(p []byte) error {
 		return err
 	}
 
-	if err := json.Unmarshal(tmp[1], &f.Number); err != nil {
-		return err
-	}
-
-	return nil
+	return json.Unmarshal(tmp[1], &f.Number)
 }
 
 // MarshalJSON marshalls a UpdateUIRequestParams object to json
