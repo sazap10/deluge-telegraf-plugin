@@ -3,7 +3,7 @@ module github.com/sazap10/deluge-telegraf-plugin
 go 1.20
 
 require (
-	github.com/influxdata/telegraf v1.27.2
+	github.com/influxdata/telegraf v1.27.3
 	github.com/pkg/errors v0.9.1
 )
 
@@ -26,7 +26,7 @@ require (
 	github.com/google/cel-go v0.14.1-0.20230424164844-d39523c445fc // indirect
 	github.com/gosnmp/gosnmp v1.35.1-0.20230602062452-f30602b8dad6 // indirect
 	github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 // indirect
-	github.com/klauspost/compress v1.16.6 // indirect
+	github.com/klauspost/compress v1.16.7 // indirect
 	github.com/klauspost/pgzip v1.2.6 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
