@@ -219,6 +219,7 @@ func (d *API) GetAuth() error {
 	}
 
 	for _, c := range resp.Cookies() {
+		c := c
 		if c.Name == "_session_id" {
 			d.AuthToken = &c.Value
 			return nil
