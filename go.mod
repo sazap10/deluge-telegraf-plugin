@@ -5,7 +5,7 @@ go 1.21
 toolchain go1.21.1
 
 require (
-	github.com/influxdata/telegraf v1.28.0
+	github.com/influxdata/telegraf v1.28.1
 	github.com/pkg/errors v0.9.1
 )
 
