@@ -702,6 +702,8 @@ github.com/influxdata/telegraf v1.28.5 h1:6iAbcBlxaQLImeW5Y3jf54Wv82BKXJy37i9n6G
 github.com/influxdata/telegraf v1.28.5/go.mod h1:ZCmhTmwF+NTzynch/vdA1mVnb0uiyB9uofPtY81CZQA=
 github.com/influxdata/telegraf v1.29.0 h1:/Sw41Y6ymHzG7IkNfxdw7njjkQQ8AOS/Eq3NeKwT+OM=
 github.com/influxdata/telegraf v1.29.0/go.mod h1:DtwzjslHHuKc9Y1LpkQ6uwFEJotvLuBgLtb/0ZHS+lg=
+github.com/influxdata/telegraf v1.29.1 h1:XcIDMdFQ67zPMO/L19K0nEzCU3GpF46iUn7/+2M1eVE=
+github.com/influxdata/telegraf v1.29.1/go.mod h1:Pou2J4UOPNv7T7twANVFNFmT5nCGAai6SDqAovlGY70=
 github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 h1:vvyMtD5LTJc1W9sQKjDkAWdcg0478CszSdzlHtiAXCY=
 github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65/go.mod h1:zApaNFpP/bTpQItGZNNUMISDMDAnTXu9UqJ4yT3ocz8=
 github.com/influxdata/usage-client v0.0.0-20160829180054-6d3895376368/go.mod h1:Wbbw6tYNvwa5dlB6304Sd+82Z3f7PmVZHVKU637d4po=
@@ -772,6 +774,8 @@ github.com/klauspost/compress v1.17.0 h1:Rnbp4K9EjcDuVuHtd0dgA4qNuv9yKDYKK1ulpJw
 github.com/klauspost/compress v1.17.0/go.mod h1:ntbaceVETuRiXiv4DpjP66DpAtAGkEQskQzEyD//IeE=
 github.com/klauspost/compress v1.17.3 h1:qkRjuerhUU1EmXLYGkSH6EZL+vPSxIrYjLNAK4slzwA=
 github.com/klauspost/compress v1.17.3/go.mod h1:/dCuZOvVtNoHsyb+cuJD3itjs3NbnF6KH9zAO4BDxPM=
+github.com/klauspost/compress v1.17.4 h1:Ej5ixsIri7BrIjBkRZLTo6ghwrEtHFk7ijlczPW4fZ4=
+github.com/klauspost/compress v1.17.4/go.mod h1:/dCuZOvVtNoHsyb+cuJD3itjs3NbnF6KH9zAO4BDxPM=
 github.com/klauspost/cpuid v0.0.0-20170728055534-ae7887de9fa5/go.mod h1:Pj4uuM528wm8OyEC2QMXAi2YiTZ96dNQPGgoMS4s3ek=
 github.com/klauspost/crc32 v0.0.0-20161016154125-cb6bfca970f6/go.mod h1:+ZoRqAPRLkC4NPOvfYeR5KNOrY6TD+/sAC3HXPZgDYg=
 github.com/klauspost/pgzip v1.0.2-0.20170402124221-0bf5dcad4ada/go.mod h1:Ch1tH69qFZu15pkjo5kYi6mth2Zzwzt50oCQKQE9RUs=

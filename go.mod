@@ -5,7 +5,7 @@ go 1.21
 toolchain go1.21.1
 
 require (
-	github.com/influxdata/telegraf v1.29.0
+	github.com/influxdata/telegraf v1.29.1
 	github.com/pkg/errors v0.9.1
 )
 
@@ -29,7 +29,7 @@ require (
 	github.com/google/cel-go v0.18.1 // indirect
 	github.com/gosnmp/gosnmp v1.36.1 // indirect
 	github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 // indirect
-	github.com/klauspost/compress v1.17.3 // indirect
+	github.com/klauspost/compress v1.17.4 // indirect
 	github.com/klauspost/pgzip v1.2.6 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.19 // indirect
