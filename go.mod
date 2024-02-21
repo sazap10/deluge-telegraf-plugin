@@ -1,21 +1,22 @@
 module github.com/sazap10/deluge-telegraf-plugin
 
-go 1.21
+go 1.22
 
-toolchain go1.21.1
+toolchain go1.22.0
 
 require (
-	github.com/influxdata/telegraf v1.29.4
+	github.com/influxdata/telegraf v1.29.5
 	github.com/pkg/errors v0.9.1
 )
 
 require (
+	filippo.io/edwards25519 v1.1.0 // indirect
 	github.com/BurntSushi/toml v1.3.2 // indirect
 	github.com/alecthomas/participle v0.4.1 // indirect
 	github.com/alecthomas/units v0.0.0-20211218093645-b94a6e3cc137 // indirect
 	github.com/antlr/antlr4/runtime/Go/antlr/v4 v4.0.0-20230305170008-8188dc5388df // indirect
 	github.com/awnumar/memcall v0.2.0 // indirect
-	github.com/awnumar/memguard v0.22.4-0.20231204102859-fce56aae03b8 // indirect
+	github.com/awnumar/memguard v0.22.4 // indirect
 	github.com/benbjohnson/clock v1.3.5 // indirect
 	github.com/blues/jsonata-go v1.5.4 // indirect
 	github.com/compose-spec/compose-go v1.20.2 // indirect
@@ -29,7 +30,7 @@ require (
 	github.com/google/cel-go v0.18.1 // indirect
 	github.com/gosnmp/gosnmp v1.37.0 // indirect
 	github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 // indirect
-	github.com/klauspost/compress v1.17.4 // indirect
+	github.com/klauspost/compress v1.17.6 // indirect
 	github.com/klauspost/pgzip v1.2.6 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
@@ -44,11 +45,12 @@ require (
 	github.com/stoewer/go-strcase v1.2.0 // indirect
 	github.com/tinylib/msgp v1.1.9 // indirect
 	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
-	golang.org/x/crypto v0.18.0 // indirect
+	go.step.sm/crypto v0.43.0 // indirect
+	golang.org/x/crypto v0.19.0 // indirect
 	golang.org/x/exp v0.0.0-20231219180239-dc181d75b848 // indirect
-	golang.org/x/sys v0.16.0 // indirect
+	golang.org/x/sys v0.17.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
-	google.golang.org/genproto/googleapis/api v0.0.0-20231120223509-83a465c0220f // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20231212172506-995d672761c0 // indirect
+	google.golang.org/genproto/googleapis/api v0.0.0-20240205150955-31a09d347014 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20240205150955-31a09d347014 // indirect
 	google.golang.org/protobuf v1.32.0 // indirect
 )
