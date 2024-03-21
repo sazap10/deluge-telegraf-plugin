@@ -18,15 +18,11 @@ require (
 	github.com/awnumar/memcall v0.2.0 // indirect
 	github.com/awnumar/memguard v0.22.4 // indirect
 	github.com/benbjohnson/clock v1.3.5 // indirect
-	github.com/blues/jsonata-go v1.5.4 // indirect
 	github.com/compose-spec/compose-go v1.20.2 // indirect
 	github.com/coreos/go-semver v0.3.1 // indirect
 	github.com/fatih/color v1.16.0 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
-	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang-jwt/jwt/v5 v5.2.0 // indirect
-	github.com/golang/protobuf v1.5.3 // indirect
-	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/cel-go v0.18.1 // indirect
 	github.com/gosnmp/gosnmp v1.37.0 // indirect
 	github.com/influxdata/toml v0.0.0-20190415235208-270119a8ce65 // indirect
@@ -34,17 +30,11 @@ require (
 	github.com/klauspost/pgzip v1.2.6 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
-	github.com/matttproud/golang_protobuf_extensions v1.0.4 // indirect
 	github.com/naoina/go-stringutil v0.1.0 // indirect
-	github.com/philhofer/fwd v1.1.2 // indirect
-	github.com/prometheus/client_model v0.6.0 // indirect
-	github.com/prometheus/common v0.45.0 // indirect
 	github.com/prometheus/prometheus v1.8.2-0.20210430082741-2a4b8e12bbf2 // indirect
 	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/sleepinggenius2/gosmi v0.4.4 // indirect
 	github.com/stoewer/go-strcase v1.2.0 // indirect
-	github.com/tinylib/msgp v1.1.9 // indirect
-	github.com/youmark/pkcs8 v0.0.0-20201027041543-1326539a0a0a // indirect
 	go.step.sm/crypto v0.43.0 // indirect
 	golang.org/x/crypto v0.20.0 // indirect
 	golang.org/x/exp v0.0.0-20231219180239-dc181d75b848 // indirect
@@ -52,5 +42,5 @@ require (
 	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20240205150955-31a09d347014 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240205150955-31a09d347014 // indirect
-	google.golang.org/protobuf v1.32.0 // indirect
+	google.golang.org/protobuf v1.33.0 // indirect
 )
