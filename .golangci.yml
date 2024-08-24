@@ -1,6 +1,6 @@
 linters-settings:
   govet:
-    check-shadowing: true
+    shadow: true
   maligned:
     suggest-new: true
   gocyclo:
