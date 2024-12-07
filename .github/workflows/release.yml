@@ -15,7 +15,7 @@ jobs:
       - name: Set outputs
         id: vars
         run: |
-          echo "sha_short=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_ENV
+          echo "sha_short=$(echo $GITHUB_SHA | cut -c1-7)" >> $GITHUB_OUTPUT
       - name: Install asdf & tools
         uses: asdf-vm/actions/install@v3
       - name: golangci-lint
