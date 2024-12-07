@@ -14,7 +14,7 @@ services:
     build: .
     volumes:
       - ./telegraf.conf:/etc/telegraf/telegraf.conf:ro
-      - ./plugin.conf:/app/plugin.conf:ro
+      - ./plugin-test.conf:/app/plugin.conf:ro
   deluge:
     image: ghcr.io/linuxserver/deluge
     ports:
@@ -28,7 +28,7 @@ services:
   lint:
     build:
       context: .
-      target: lint
+      target: ci
 volumes:
   influxdb:
   grafana:

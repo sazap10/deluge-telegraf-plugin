@@ -2,7 +2,7 @@
 # BUILDER/DEVELOPMENT IMAGE
 ################################################################################
 
-FROM golang:1.23.3-alpine as builder
+FROM golang:1.23-alpine as builder
 
 # Install Git
 RUN apk add --no-cache git libc6-compat make
@@ -25,16 +25,16 @@ RUN go build -o deluge-telegraf-plugin cmd/main.go
 # LINT IMAGE
 ################################################################################
 
-FROM golang:1.23.3 as ci
+FROM golang:1.23 as ci
 
 # Install golangci
-RUN curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.57.1
+RUN curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.62.2
 
 WORKDIR /app
 
 COPY --from=builder /build .
 
-COPY .golangci.yaml .
+COPY .golangci.yml .
 
 ENTRYPOINT [ "sh", "-c" ]
 CMD [ "golangci-lint run -v && go test ./... -race -timeout 30m -p 1" ]
