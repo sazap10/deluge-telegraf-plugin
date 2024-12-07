@@ -2,13 +2,13 @@
 # BUILDER/DEVELOPMENT IMAGE
 ################################################################################
 
-FROM golang:1.23-alpine as builder
+FROM golang:1.23-alpine AS builder
 
 # Install Git
 RUN apk add --no-cache git libc6-compat make
 
 # go build will fail in alpine if this is enabled as it looks for gcc
-ENV CGO_ENABLED 0
+ENV CGO_ENABLED=0
 
 WORKDIR /build/
 
@@ -25,7 +25,7 @@ RUN go build -o deluge-telegraf-plugin cmd/main.go
 # LINT IMAGE
 ################################################################################
 
-FROM golang:1.23 as ci
+FROM golang:1.23 AS ci
 
 # Install golangci
 RUN curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.62.2
