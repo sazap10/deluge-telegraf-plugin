@@ -45,7 +45,7 @@ linters:
     - lll
     - misspell
     - nakedret
-    - exportloopref
+    - copyloopvar
     - staticcheck
     - stylecheck
     - typecheck
