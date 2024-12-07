@@ -45,4 +45,6 @@ CMD [ "golangci-lint run -v && go test ./... -race -timeout 30m -p 1" ]
 
 FROM telegraf:1.32-alpine
 
+RUN apk add --no-cache smartmontools nvme-cli ipmitool
+
 COPY --from=builder /build/deluge-telegraf-plugin /app/
