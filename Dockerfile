@@ -49,6 +49,6 @@ FROM telegraf:1.32-alpine
 RUN apk add --no-cache smartmontools nvme-cli ipmitool sudo && \
     echo 'telegraf ALL=NOPASSWD:/usr/sbin/smartctl *' | tee /etc/sudoers.d/telegraf && \
     echo 'telegraf ALL=NOPASSWD:/usr/sbin/nvme *'     | tee -a /etc/sudoers.d/telegraf && \
-    echo 'telegraf ALL=NOPASSWD:/usr/bin/ipmitool *'  | tee -a /etc/sudoers.d/telegraf
+    echo 'telegraf ALL=NOPASSWD:/usr/sbin/ipmitool *'  | tee -a /etc/sudoers.d/telegraf
 
 COPY --from=builder /build/deluge-telegraf-plugin /app/
