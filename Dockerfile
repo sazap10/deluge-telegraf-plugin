@@ -16,7 +16,8 @@ COPY go.mod go.sum /build/
 
 RUN go mod download
 
-COPY . /build/
+COPY cmd /build/cmd
+COPY plugins /build/plugins
 
 # Build the executable
 RUN go build -o deluge-telegraf-plugin cmd/main.go
@@ -45,6 +46,9 @@ CMD [ "golangci-lint run -v && go test ./... -race -timeout 30m -p 1" ]
 
 FROM telegraf:1.32-alpine
 
-RUN apk add --no-cache smartmontools nvme-cli ipmitool
+RUN apk add --no-cache smartmontools nvme-cli ipmitool sudo && \
+    echo 'telegraf ALL=NOPASSWD:/usr/sbin/smartctl *' | tee /etc/sudoers.d/telegraf && \
+    echo 'telegraf ALL=NOPASSWD:/usr/sbin/nvme *'     | tee -a /etc/sudoers.d/telegraf && \
+    echo 'telegraf ALL=NOPASSWD:/usr/bin/ipmitool *'  | tee -a /etc/sudoers.d/telegraf
 
 COPY --from=builder /build/deluge-telegraf-plugin /app/
