@@ -1,7 +1,6 @@
-name: Release
+name: Build, lint and push
 
 on:
-  pull_request:
   push:
 
 jobs:
