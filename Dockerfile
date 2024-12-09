@@ -16,7 +16,8 @@ COPY go.mod go.sum /build/
 
 RUN go mod download
 
-COPY . /build/
+COPY cmd /build/cmd
+COPY plugins /build/plugins
 
 # Build the executable
 RUN go build -o deluge-telegraf-plugin cmd/main.go
