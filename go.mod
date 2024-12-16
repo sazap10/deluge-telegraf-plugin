@@ -5,7 +5,7 @@ go 1.23.0
 toolchain go1.23.4
 
 require (
-	github.com/influxdata/telegraf v1.32.3
+	github.com/influxdata/telegraf v1.33.0
 	github.com/pkg/errors v0.9.1
 )
 
