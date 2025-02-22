@@ -2,7 +2,7 @@
 # BUILDER/DEVELOPMENT IMAGE
 ################################################################################
 
-FROM golang:1.23-alpine AS builder
+FROM golang:1.24-alpine AS builder
 
 # Install Git
 RUN apk add --no-cache git libc6-compat make
@@ -26,10 +26,10 @@ RUN go build -o deluge-telegraf-plugin cmd/main.go
 # LINT IMAGE
 ################################################################################
 
-FROM golang:1.23 AS ci
+FROM golang:1.24 AS ci
 
 # Install golangci
-RUN curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.62.2
+RUN curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.64.5
 
 WORKDIR /app
 
