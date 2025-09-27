@@ -1,60 +1,206 @@
-linters-settings:
-  govet:
-    shadow: true
-  maligned:
-    suggest-new: true
-  gocyclo:
-    min-complexity: 15
-  dupl:
-    threshold: 300
-  lll:
-    line-length: 200
-  golint:
-    min-confidence: 0
-
-issues:
-  include:
-    - EXC0002 # disable excluding of issues about comments from golint
-  exclude:
-    # errcheck: Almost all programs ignore errors on these functions and in most cases it's ok
-    - Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*printf?|os\.(Un)?Setenv). is not checked
-    # golint: Only require comments on methods
-    - exported (const|var) .* should have comment.*
-    - comment on exported (const|var) .* should be of the form
-    - should have a package comment, unless it's in another file for this package
-
+version: "2"
+run:
+  build-tags:
+    - ci
 linters:
-  enable-all: false
+  default: none
   enable:
+    - asciicheck
+    - bidichk
     - bodyclose
+    - containedctx
+    - contextcheck
+    - copyloopvar
+    - cyclop
+    - decorder
+    - depguard
     - dogsled
     - dupl
+    - durationcheck
     - errcheck
+    - errchkjson
+    - errname
+    - errorlint
+    - exhaustive
+    - forbidigo
+    - forcetypeassert
     - funlen
+    - gochecknoglobals
     - gochecknoinits
+    - gocognit
     - goconst
     - gocritic
     - gocyclo
-    - gofmt
-    - revive
+    - goheader
+    - gomoddirectives
+    - gomodguard
     - goprintffuncname
     - gosec
-    - gosimple
     - govet
+    - grouper
+    - importas
     - ineffassign
     - lll
+    - maintidx
+    - makezero
     - misspell
     - nakedret
-    - copyloopvar
+    - nestif
+    - nilerr
+    - noctx
+    - nolintlint
+    - predeclared
+    - promlinter
+    - revive
+    - rowserrcheck
+    - sqlclosecheck
     - staticcheck
-    - stylecheck
-    - typecheck
+    - testpackage
+    - thelper
+    - tparallel
     - unconvert
     - unparam
     - unused
+    - wastedassign
     - whitespace
-    - gochecknoglobals
-
-run:
-  concurrency: 4
-  deadline: 5m
+  settings:
+    cyclop:
+      max-complexity: 25
+    depguard:
+      rules:
+        main:
+          deny:
+            - pkg: github.com/satori/go.uuid
+              desc: This package has previously broken backwards compatibility in a non-major upgrade. Recommend using github.com/gofrs/uuid instead.
+    errcheck:
+      exclude-functions:
+        - bugsnag.Notify()
+        - (bugsnag-go).Notify
+        - (*net/http.Client).Do
+    exhaustive:
+      default-signifies-exhaustive: true
+    funlen:
+      lines: 150
+      statements: 150
+    gocognit:
+      min-complexity: 50
+    goconst:
+      min-occurrences: 8
+    ireturn:
+      allow:
+        - anon
+        - error
+        - empty
+        - stdlib
+        - Connection
+    lll:
+      line-length: 200
+    nestif:
+      min-complexity: 20
+    revive:
+      severity: warning
+      rules:
+        - name: blank-imports
+        - name: context-as-argument
+        - name: context-keys-type
+        - name: dot-imports
+        - name: error-return
+        - name: error-naming
+        - name: exported
+        - name: increment-decrement
+        - name: var-naming
+        - name: var-declaration
+        - name: package-comments
+        - name: range
+        - name: receiver-naming
+        - name: time-naming
+        - name: unexported-return
+        - name: indent-error-flow
+        - name: errorf
+        - name: empty-block
+        - name: superfluous-else
+        - name: unreachable-code
+        - name: redefines-builtin-id
+    staticcheck:
+      checks:
+        - -ST1005
+  exclusions:
+    generated: lax
+    presets:
+      - comments
+      - common-false-positives
+      - legacy
+      - std-error-handling
+    rules:
+      - linters:
+          - containedctx
+          - contextcheck
+          - dupl
+          - err113
+          - errcheck
+          - forbidigo
+          - forcetypeassert
+          - funlen
+          - gochecknoglobals
+          - gocognit
+          - goconst
+          - gocyclo
+          - gosec
+          - ireturn
+          - maintidx
+          - makezero
+          - noctx
+          - scopelint
+          - unparam
+          - wastedassign
+        path: _test\.go
+      - linters:
+          - containedctx
+          - funlen
+          - gochecknoglobals
+          - ireturn
+          - unparam
+          - wastedassign
+        path: test/
+      - linters:
+          - testpackage
+        path: pkg/
+      - linters:
+          - testpackage
+        path: main_test.go
+      - linters:
+          - gochecknoglobals
+        source: var .*Script string
+      - path: (.+)\.go$
+        text: Error return value of `bugsnag.Notify` is not checked
+      - path: (.+)\.go$
+        text: G104
+      - path: (.+)\.go$
+        text: G404
+      - path: (.+)\.go$
+        text: Error return value of .((os\.)?std(out|err)\..*|.*Close|.*Flush|os\.Remove(All)?|.*printf?|os\.(Un)?Setenv). is not checked
+      - path: (.+)\.go$
+        text: exported (const|var) .* should have comment or be unexported
+      - path: (.+)\.go$
+        text: comment on exported (const|var) .* should be of the form
+      - path: (.+)\.go$
+        text: \`ctx\` is unused
+      - path: (.+)\.go$
+        text: 'appendAssign: append result not assigned to the same slice'
+      - linters:
+          - cyclop
+        path: (.+)_test\.go
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
+formatters:
+  enable:
+    - gofmt
+    - goimports
+  exclusions:
+    generated: lax
+    paths:
+      - third_party$
+      - builtin$
+      - examples$
