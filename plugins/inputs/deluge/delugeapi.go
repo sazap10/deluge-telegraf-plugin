@@ -2,6 +2,7 @@ package deluge
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -160,7 +161,7 @@ func (d *API) makeRequest(host string, request interface{}) (*http.Response, err
 		return nil, err
 	}
 
-	req, err := http.NewRequest("POST", u.String(), buf)
+	req, err := http.NewRequestWithContext(context.Background(), "POST", u.String(), buf)
 	if err != nil {
 		return nil, err
 	}
@@ -177,7 +178,8 @@ func (d *API) makeRequest(host string, request interface{}) (*http.Response, err
 	resp, err := httpClient.Do(req)
 	if err != nil {
 		// If the error type is *url.Error, sanitize its URL before returning.
-		if e, ok := err.(*url.Error); ok {
+		var e *url.Error
+		if errors.As(err, &e) {
 			if url, urlErr := url.Parse(e.URL); urlErr == nil {
 				e.URL = url.String()
 				return nil, e

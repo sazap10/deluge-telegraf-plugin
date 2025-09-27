@@ -13,8 +13,6 @@ jobs:
           fetch-depth: 0
       - name: Install asdf & tools
         uses: asdf-vm/actions/install@v4
-        with:
-          asdf_branch: v0.15.0
       - name: golangci-lint
         run: golangci-lint run
       - name: Login to GitHub Container Registry

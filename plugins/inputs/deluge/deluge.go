@@ -49,8 +49,8 @@ func (d *Deluge) Init() error {
 func (d *Deluge) Gather(acc telegraf.Accumulator) error {
 	result, err := d.API.GetMetrics()
 	if err != nil {
-		_, ok := err.(*NoAuthError)
-		if ok {
+		var noAuthErr *NoAuthError
+		if errors.As(err, &noAuthErr) {
 			// Unauthenticated, try authenticating and retry get metrics
 			err = d.API.GetAuth()
 			if err != nil {
