@@ -9,7 +9,7 @@ require (
 
 require (
 	cel.dev/expr v0.24.0 // indirect
-	filippo.io/edwards25519 v1.1.0 // indirect
+	filippo.io/edwards25519 v1.1.1 // indirect
 	github.com/BurntSushi/toml v1.6.0 // indirect
 	github.com/alecthomas/participle v0.4.1 // indirect
 	github.com/alecthomas/units v0.0.0-20240927000941-0f3dac36c52b // indirect
