@@ -168,7 +168,7 @@ func (d *API) makeRequest(host string, request interface{}) (*http.Response, err
 
 	req.Header.Set("Content-Type", "application/json")
 	if d.AuthToken != nil {
-		c := http.Cookie{
+		c := http.Cookie{ // #nosec G124 -- client request cookie, not sent to browser
 			Name:  "_session_id",
 			Value: *d.AuthToken,
 		}
