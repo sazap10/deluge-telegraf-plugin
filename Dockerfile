@@ -29,7 +29,7 @@ RUN go build -o deluge-telegraf-plugin cmd/main.go
 FROM golang:1.27 AS ci
 
 # Install golangci
-RUN curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s v1.64.5
+RUN curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/HEAD/install.sh | sh -s -- -b "$(go env GOPATH)/bin" v2.13.2
 
 WORKDIR /app
 
