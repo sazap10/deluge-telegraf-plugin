@@ -202,15 +202,16 @@ func (d *API) GetAuth() error {
 		},
 	}
 	resp, err := d.makeRequest(d.Host, authRequest)
+	if err != nil {
+		return errors.Wrap(err, "unable to authenticate with deluge, please check config")
+	}
 	defer func() {
 		bodyErr := resp.Body.Close()
 		if bodyErr != nil {
 			log.Println(bodyErr)
 		}
 	}()
-	if err != nil {
-		return errors.Wrap(err, "unable to authenticate with deluge, please check config")
-	}
+
 	var authReponse AuthResponse
 	err = json.NewDecoder(resp.Body).Decode(&authReponse)
 	if err != nil {
@@ -250,15 +251,16 @@ func (d *API) GetMetrics() (*UpdateUIResult, error) {
 		BaseRequest: BaseRequest{Method: "web.update_ui", ID: 1},
 	}
 	resp, err := d.makeRequest(d.Host, updateUIRequest)
+	if err != nil {
+		return nil, errors.Wrap(err, "error making web.update_ui request to deluge")
+	}
 	defer func() {
 		bodyErr := resp.Body.Close()
 		if bodyErr != nil {
 			log.Println(bodyErr)
 		}
 	}()
-	if err != nil {
-		return nil, errors.Wrap(err, "error making web.update_ui request to deluge")
-	}
+
 	var updateUIResponse UpdateUIResponse
 	err = json.NewDecoder(resp.Body).Decode(&updateUIResponse)
 	if err != nil {
